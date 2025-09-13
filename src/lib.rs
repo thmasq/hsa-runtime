@@ -6,7 +6,7 @@
 mod agent;
 mod bindings;
 mod context;
-mod error;
+pub mod error;
 mod executable;
 mod memory;
 mod queue;
