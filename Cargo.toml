@@ -1,0 +1,30 @@
+[package]
+name = "hsa-runtime"
+version = "0.1.0"
+edition = "2024"
+authors = ["Thomas Q <thomasqsa@gmail.com>"]
+description = "Rust bindings for AMD's HSA (Heterogeneous System Architecture) runtime"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/thmasq/hsa-rs"
+keywords = ["hsa", "amd", "gpu", "heterogeneous", "compute"]
+categories = ["api-bindings", "hardware-support"]
+
+[dependencies]
+bitflags = "2.9.4"
+thiserror = "2.0.16"
+
+[build-dependencies]
+bindgen = { version = "0.72.1"}
+cc = { version = "1.2.37"}
+
+[lib]
+name = "hsa"
+crate-type = ["lib"]
+
+[features]
+default = []
+amd-extensions = []
+
+[[example]]
+name = "blackhole_kernel"
+path = "examples/blackhole_kernel.rs"
